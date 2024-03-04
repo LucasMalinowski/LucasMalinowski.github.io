@@ -197,27 +197,25 @@
 	</div>
 
 	<script>
-		token = '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';
+		token = 'cb0e0090d9a6da31bb7ab0f23d8a65b4018c89f8';
 		// Fetch repositories from GitHub API
-		fetch('https://api.github.com/users/LucasMalinowski/repos',{headers: {Authorization: `Bearer ${token}`}})
+		fetch('https://api.github.com/users/LucasMalinowski/repos')
 				.then(response => response.json())
 				.then(data => {
 					const reposContainer = document.getElementById('reposContainer');
 
 					data.forEach(repo => {
-						if (repo.name === 'LucasMalinowski') {
+						if (repo.name === 'LucasMalinowski.github.io') {
 							return;
 						}
 						// Fetch icon for the repository
-						fetch(`https://api.github.com/repos/LucasMalinowski/${repo.name}/contents/${repo.name}.png`,{headers: {Authorization: `Bearer ${token}`}})
+						fetch(`https://api.github.com/repos/LucasMalinowski/${repo.name}/contents/${repo.name}.png`)
 								.then(response => response.json())
 								.then(iconData => {
 									// Create a new div element with Bootstrap classes and WOW.js animation
 									const repoElement = document.createElement('div');
 									repoElement.classList.add('col-md-4', 'col-xs-6', 'wow', 'fadeIn');
 									repoElement.setAttribute('data-wow-delay', '0.6s');
-									repoElement.style.display = 'flex';
-									repoElement.style.justifyContent = 'center';
 
 									// Create inner HTML based on the template, replacing placeholders with actual data
 									repoElement.innerHTML = `
