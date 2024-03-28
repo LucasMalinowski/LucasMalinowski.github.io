@@ -173,11 +173,14 @@ h1,h2,h3,h4,h5
 	{
         background: url('../images/initial_photo.jpg');
         background-size: cover;
-        background-repeat: no-repeat;
+	background-position: center;
         padding-top: 120px;
         padding-bottom: 140px;
         text-align: center;
 	}
+.custom-p {
+	color: white;
+}
 #home h1
     {
         border: 2px solid #0ea5e9;
